@@ -50,3 +50,15 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# macOs specific
+*.DS_Store
+
+#ST CubeIDE
+*.cyclo
+stm32u5.list
+*.lst
+*.bin
+
+#VScode
+settings.json

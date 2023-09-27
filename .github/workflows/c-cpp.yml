@@ -1,0 +1,44 @@
+name: Builds
+on: push
+
+jobs:
+  Quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install clang-tools clang-format shellcheck
+      - name: shellcheck
+        run: make shellcheck
+      - name: clang-format
+        run: make ci_check_format
+      - name: scan-build
+        run: make scan
+
+  Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install gcc
+      - name: unit-test
+        run: make test
+  
+  STM32U5:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install gcc-arm-none-eabi
+      - name: debug
+        run: make -C examples/stm32u5 all
+      
