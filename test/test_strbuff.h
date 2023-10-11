@@ -78,4 +78,5 @@ void test_strbuff_find(void);
 void test_strbuff_printc(void);
 void test_strbuff_prints(void);
 void test_strbuff_len(void);
+void test_strbuff_revert(void);
 void test_strbuff_sanitize(void);

@@ -24,7 +24,7 @@ extern "C" {
 
 #define STRBUFF_VERSION_MAJOR 0
 #define STRBUFF_VERSION_MINOR 1
-#define STRBUFF_VERSION_BUILD 0
+#define STRBUFF_VERSION_BUILD 1
 #define STRBUFF_VERSION       ((STRBUFF_VERSION_MAJOR << 16) | (STRBUFF_VERSION_MINOR << 8) | STRBUFF_VERSION_BUILD)
 
 #ifndef strbuff_error_printf
@@ -152,6 +152,14 @@ char *strbuff_find(const strbuff *dest, const strbuff *substring);
  * @details If the string referenced by the buffer string is not null terminating (AZT), the function will return 0.
  */
 size_t strbuff_len(const strbuff *buff);
+
+/**
+ * Reverses the contents of a string buffer.
+ *
+ * @param buff Pointer to the string buffer to be reversed.
+ * @return The length of the string buffer.
+ */
+unsigned long strbuff_revert(const strbuff *buff);
 
 /**
  * @brief Sanitizes a string buffer by setting remaining characters (beyond AZT) to 0.

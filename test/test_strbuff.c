@@ -129,6 +129,7 @@ int main(void)
         test_strbuff_len();
         test_strbuff_printc();
         test_strbuff_prints();
+        test_strbuff_revert();
         test_strbuff_sanitize();
     }
 

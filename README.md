@@ -60,7 +60,7 @@ You now have access to all the functions below:
 
 * **strbuff_find(buff, src)** 
 
-* **strbuff_revert(buff)** *not yet implemented*
+* **strbuff_revert(buff)**
 
 * **strbuff_capacity(buff)**
 * **strbuff_len(buff)**
