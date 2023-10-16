@@ -1,0 +1,6 @@
+[submodule "scripts/c-versionner"]
+	path = scripts/c-versionner
+	url = https://github.com/AlexFabre/c-versionner
+[submodule "scripts/clang-format-all"]
+	path = scripts/clang-format-all
+	url = https://github.com/AlexFabre/clang-format-all

@@ -138,7 +138,9 @@ int main(void)
     end        = clock();
     time_spent = ((double)(end - begin)) / ((double)(CLOCKS_PER_SEC));
 
-    printf("Test duration %f seconds\n", time_spent);
-
+    printf("Test duration:    %f seconds\n", time_spent);
+    printf("strbuff version:  %d.%d.%d\n", STRBUFF_MAJOR, STRBUFF_MINOR, STRBUFF_FIX);
+    printf("Branch name:      %s\n", STRBUFF_BRANCH_NAME);
+    printf("Commit short SHA: %s\n", STRBUFF_COMMIT_SHORT_SHA);
     return r;
 }

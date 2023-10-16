@@ -115,7 +115,7 @@ endef
 #------------------------------------------------------------------------------
 # Build
 
-all: clean build
+all: clean version build
 
 build: directories $(TARGET)
 
@@ -155,8 +155,9 @@ CPPCHECK_FLAGS += --addon=misra.py
 
 # shellcheck 0.9.0
 shellcheck:
-	@shellcheck $(SOURCEDIR)scripts/*.sh
-	@echo $$(find $(SOURCEDIR)scripts -type f -name '*.sh'):PASS
+	@find $(SOURCEDIR)scripts -type f -name '*.sh' -exec shellcheck {} \;
+	@echo File checked
+	@find $(SOURCEDIR)scripts -type f -name '*.sh' -exec echo {} \;
 
 cppcheck:
 	# Static code analysis
@@ -164,7 +165,7 @@ cppcheck:
 
 # clang-format on project code
 format:
-	@bash $(SOURCEDIR)scripts/clang-format-all.sh $(FORMAT_SOURCE_DIR)
+	@bash $(SOURCEDIR)scripts/clang-format-all/clang-format-all.sh $(FORMAT_SOURCE_DIR)
 
 # CI check format.
 # Applying format should not modify any file
@@ -185,7 +186,10 @@ scan:
 	@$(MAKE) --no-print-directory clean
 	@scan-build --use-cc=gcc-13 -o docs/scan-report/ make build
 
-.PHONY: shellcheck format ci_check_format scan
+version:
+	@bash $(SOURCEDIR)scripts/c-versionner/c-versionner.sh -o src/strbuff_version.h
+
+.PHONY: shellcheck format ci_check_format scan version
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------

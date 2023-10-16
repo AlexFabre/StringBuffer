@@ -62,3 +62,6 @@ stm32u5.list
 
 #VScode
 settings.json
+
+# Generated file
+src/strbuff_version.h

@@ -21,11 +21,9 @@ extern "C" {
 
 #include "strbuff_config.h"
 #include "strbuff_type.h"
+#include "strbuff_version.h"
 
-#define STRBUFF_VERSION_MAJOR 0
-#define STRBUFF_VERSION_MINOR 1
-#define STRBUFF_VERSION_BUILD 1
-#define STRBUFF_VERSION       ((STRBUFF_VERSION_MAJOR << 16) | (STRBUFF_VERSION_MINOR << 8) | STRBUFF_VERSION_BUILD)
+#define STRBUFF_VERSION ((STRBUFF_MAJOR << 16) | (STRBUFF_MINOR << 8) | STRBUFF_FIX)
 
 #ifndef strbuff_error_printf
 #define strbuff_error_printf(...) ;

@@ -11,8 +11,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install clang-tools clang-format shellcheck
+      - name: submodules
+        run: git submodule update --init --recursive
       - name: shellcheck
         run: make shellcheck
+      - name: version
+        run: make version
       - name: clang-format
         run: make ci_check_format
       - name: scan-build
@@ -27,6 +31,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install gcc
+      - name: submodules
+        run: git submodule update --init --recursive
       - name: unit-test
         run: make test
   
@@ -39,6 +45,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install gcc-arm-none-eabi
+      - name: submodules
+        run: git submodule update --init --recursive
+      - name: version
+        run: make version
       - name: debug
         run: make -C examples/stm32u5 all
       
