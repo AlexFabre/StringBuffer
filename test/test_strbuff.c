@@ -127,6 +127,7 @@ int main(void)
         test_strbuff_end_with();
         test_strbuff_find();
         test_strbuff_len();
+        test_strbuff_prefixb();
         test_strbuff_printc();
         test_strbuff_prints();
         test_strbuff_revert();

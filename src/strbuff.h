@@ -17,6 +17,7 @@ extern "C" {
 #include <string.h>
 
 #include "strbuff_add.h"
+#include "strbuff_prefix.h"
 #include "strbuff_print.h"
 
 #include "strbuff_config.h"
@@ -114,6 +115,8 @@ extern "C" {
 #define strbuff_clear(buff_ptr)    (void)memset((buff_ptr)->str, 0, (buff_ptr)->capacity)
 
 #define strbuff_add(dest, src)     _Generic((src), int: strbuff_addc, char: strbuff_addc, char *: strbuff_adds, const char *: strbuff_adds, const strbuff *: strbuff_addb)(dest, src)
+
+#define strbuff_prefix(dest, src)  _Generic((src), int: strbuff_prefixc, char: strbuff_prefixc, char *: strbuff_prefixs, const char *: strbuff_prefixs, const strbuff *: strbuff_prefixb)(dest, src)
 
 #define strbuff_print(dest, src)   _Generic((src), int: strbuff_printc, char: strbuff_printc, char *: strbuff_prints, const char *: strbuff_prints, const strbuff *: strbuff_printb)(dest, src)
 
