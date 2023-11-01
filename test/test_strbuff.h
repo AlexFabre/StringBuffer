@@ -77,6 +77,7 @@ void test_strbuff_end_with(void);
 void test_strbuff_find(void);
 void test_strbuff_len(void);
 void test_strbuff_prefixb(void);
+void test_strbuff_prefixs(void);
 // void test_strbuff_printb(void);
 void test_strbuff_printc(void);
 // void test_strbuff_printf(void);
