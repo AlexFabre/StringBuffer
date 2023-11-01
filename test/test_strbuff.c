@@ -128,6 +128,7 @@ int main(void)
         test_strbuff_find();
         test_strbuff_len();
         test_strbuff_prefixb();
+        test_strbuff_prefixc();
         test_strbuff_prefixs();
         test_strbuff_printc();
         test_strbuff_prints();
