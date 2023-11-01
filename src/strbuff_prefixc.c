@@ -13,8 +13,6 @@
  * @param src_char The source char to put in front.
  * @return The number of char added.
  *
- * @headerfile #include "strbuff.h"
- *
  * @details If dest buffer pointer is null, then the function returns 0.
  */
 unsigned long strbuff_prefixc(const strbuff *dest, const char src_char)

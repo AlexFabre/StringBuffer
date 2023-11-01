@@ -13,8 +13,6 @@
  * @param src The source string to add in front.
  * @return The length of the source string copied into the buffer.
  *
- * @headerfile #include "strbuff.h"
- *
  * @details If dest or src buffer pointer is null, then the function returns 0.
  */
 // unsigned long strbuff_prefixs(const strbuff *dest, const char *src_str)

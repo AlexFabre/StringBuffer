@@ -13,8 +13,6 @@
  * @param src The source string buffer to put in front.
  * @return The length of the prefixed string.
  *
- * @headerfile #include "strbuff.h"
- *
  * @details If dest or src buffer pointer is null, then the function returns 0.
  */
 unsigned long strbuff_prefixb(const strbuff *restrict dest, const strbuff *restrict src)

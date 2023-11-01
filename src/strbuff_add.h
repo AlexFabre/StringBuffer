@@ -20,8 +20,6 @@ extern "C" {
  * @param src The source string buffer.
  * @return The length of the appended string.
  *
- * @headerfile #include "strbuff.h"
- *
  * @details If dest or src buffer pointer is null, then the function returns 0.
  */
 unsigned long strbuff_addb(const strbuff *dest, const strbuff *src);
@@ -32,8 +30,6 @@ unsigned long strbuff_addb(const strbuff *dest, const strbuff *src);
  * @param dest The destination string buffer.
  * @param src_char The source char.
  * @return The number of char added.
- *
- * @headerfile #include "strbuff.h"
  *
  * @details If dest buffer pointer is null, then the function returns 0.
  */
@@ -57,8 +53,6 @@ unsigned long strbuff_addf(const strbuff *dest, const char *format, ...) __attri
  * @param dest The destination string buffer.
  * @param src The source string.
  * @return The length of the source string copied into the buffer.
- *
- * @headerfile #include "strbuff.h"
  *
  * @details If dest or src buffer pointer is null, then the function returns 0.
  */

@@ -147,8 +147,6 @@ char *strbuff_find(const strbuff *dest, const strbuff *substring);
  * @param buff Reference to the string buffer.
  * @return The length of the string referenced by the string buffer.
  *
- * @headerfile #include "strbuff.h"
- *
  * @details If the string buffer pointer is null, then the function returns 0.
  * @details If the string referenced by the buffer string is not null terminating (AZT), the function will return 0.
  */
