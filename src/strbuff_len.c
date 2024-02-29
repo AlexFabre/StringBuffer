@@ -21,7 +21,8 @@ size_t strbuff_len(const strbuff *buff)
 
     const char *s;
 
-    for (s = buff->str; *s; s++) {
+    for (s = buff->str; *s; s++) 
+    {
         if ((unsigned)(s - buff->str) == (strbuff_capacity(buff) - 1)) {
             /* The null terminating char was not found within the string total size
              * Write a null terminating char at the begining for safety */
